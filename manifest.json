@@ -1,0 +1,26 @@
+{
+    "name": "chrome-logfile-monitor",
+    "version": "0.1.0",
+    "manifest_version" : 2,
+    "description": "automatically search for downloadable logs on a webpage for processing such as live error monitoring",
+    "permissions": [
+        "notifications"
+    ],
+    "browser_action":{
+        "default_icon":"img/default_icon.png",
+        "default_popup":"popup.html",
+        "icons":{
+            "128":"default_icon.png"
+        }
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}
